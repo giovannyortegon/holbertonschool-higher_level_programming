@@ -1,19 +1,23 @@
 #!/usr/bin/python3
-""" Lists all elements from the database """
+""" Lists all states with a name starting with N """
 import MySQLdb
 from sys import argv
 
 
 def connect():
     """ Connection Data Base """
-    if len(argv) == 4:
+    if len(argv) == 5:
         conn = MySQLdb.connect(host='localhost', user=argv[1],
                                passwd=argv[2], db=argv[3], port=3306)
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM states ORDER BY states.id ASC;')
-        # Print tuple
+        name = argv[4]
+        query = "SELECT * FROM states WHERE name = '{}'\
+                 ORDER BY states.id ASC".format(name)
+        cursor.execute(query)
+        # Search name on the tuple
         for row in cursor.fetchall():
-            print(row)
+            if row[1] == name:
+                print(row)
         # Close connection
         conn.close()
 
