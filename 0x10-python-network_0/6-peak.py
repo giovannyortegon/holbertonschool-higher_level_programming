@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""  """
+""" Search Peak of an array """
+
+
 def find_peak(list_of_integers):
+    """ Function to search an peak """
     if len(list_of_integers) == 0:
         return None
     else:
