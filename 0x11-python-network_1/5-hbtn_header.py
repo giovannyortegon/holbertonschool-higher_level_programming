@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 """ Imports """
 from sys import argv
-from requests import get
+from requests import post
 
 
-def main(url):
+def main(args):
     """ Fetches https://intranet.hbtn.io/status
     """
-    req = get(url)
-    text = req.headers['X-Request-Id']
+    url = args[1]
+    headers = {'email': args[2]}
+
+    req = post(url, data=headers)
+    text = req.text
     print('{}'.format(text))
 
 
 if __name__ == '__main__':
-    main(argv[1])
+    main(argv)
