@@ -10,7 +10,7 @@ def main(host):
     URL = host
 
     req = get(URL)
-    text = req.headers['X-Request-Id']
+    text = req.headers.get('X-Request-Id')
     print('{}'.format(text))
 
 
