@@ -8,8 +8,7 @@ def main(value):
     """ Takes in a URL, sends a request to the URL
         and displays the body of the response.
     """
-    URL = 'http://f5e914e9e9e6.20.hbtn-cod.io:5000/search_user'
-#    URL = 'http://0.0.0.0:5000/search_user'
+    URL = 'http://0.0.0.0:5000/search_user'
     data = {'q': value}
 
     req = post(URL, data=data)
