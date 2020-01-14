@@ -17,12 +17,13 @@ def main(value):
     part1 = response.get('results')
     for result in part1:
         print(result.get('name'))
-
-    req2 = get(response.get('next'), params=data)
-    response2 = req2.json()
-    part2 = response2.get('results')
-    for result in part2:
-        print(result.get('name'))
+#    print(response.get('next') )
+    while response.get('next') is not None:
+        req = get(response.get('next'), params=data)
+        response = req.json()
+        part2 = response.get('results')
+        for result in part2:
+            print(result.get('name'))
 
 
 if __name__ == '__main__':
