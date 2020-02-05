@@ -8,5 +8,5 @@ Args.forEach(i => { len++; });
 if (len === 0) {
   console.log('No argument');
 } else {
-  console.log(Args[len - 1]);
+  console.log(Args[0]);
 }
