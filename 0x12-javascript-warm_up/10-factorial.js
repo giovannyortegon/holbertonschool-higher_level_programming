@@ -2,7 +2,7 @@
 // Prints the first argument passed to it.
 const args = process.argv.slice(2);
 const len = args.length;
-let	factorial;
+let factorial;
 
 if (len === 0) {
   console.log('1');
@@ -12,7 +12,7 @@ if (len === 0) {
 }
 
 function fact (a) {
-  if (a ===  0) {
+  if (a === 0) {
     return 1;
   } else {
     return fact(a - 1) * a;
