@@ -1,3 +1,3 @@
-$('#red_header').one('click', function () {
+$('#red_header').click(function () {
   $('header').addClass('red');
 });
